@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Player } from '../classes/player';
+import { catchError, map } from 'rxjs/operators';
 
 
 @Injectable()
@@ -11,12 +11,14 @@ export class PlayersService {
 
   constructor(private http: HttpClient) { }
 
-  getPlayers(): Observable<Player[]> {
-    return this.http.get<Player[]>(`${this.API_BASE_URL}/leaguedashplayerbiostats/?PerMode=Totals&LeagueID=00&Season=2016-17&SeasonType=Regular Season`);
+  getPlayers(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(`/stats/leaguedashplayerbiostats/?PerMode=Totals&LeagueID=00&Season=2016-17&SeasonType=Regular Season`)
+    .pipe(
+      map((result: any) => result.resultSets)
+    );
   }
 
   getPlayer(id: string) { 
-    return this.http.get<any>(`${this.API_BASE_URL}/commonplayerinfo/?PlayerID=${id}`);
+    return this.http.get(`/stats/commonplayerinfo/?PlayerID=${id}`);
   }
-
 }

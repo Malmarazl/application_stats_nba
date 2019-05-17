@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../../services/players.service';
-import { Player } from '../../classes/player';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-list-players',
@@ -9,14 +9,20 @@ import { Player } from '../../classes/player';
 })
 export class ListPlayersComponent implements OnInit {
 
-  playerList: Player[] = [];
+  playerList: Array<any>;
+  result: Object;
 
   constructor(private PlayersService: PlayersService) { }
 
   ngOnInit() {
+    this.getPlayers();
+  }
+
+  private getPlayers(): void {
     this.PlayersService.getPlayers()
-    .subscribe( players => {
-      this.playerList = players;
+    .subscribe((response) => {
+      this.result = response;
+      this.playerList = response[0].rowSet;
     });
   }
 
