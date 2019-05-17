@@ -9,8 +9,9 @@ import * as _ from 'lodash';
 })
 export class ListPlayersComponent implements OnInit {
 
-  playerList: Array<any>;
-  result: Object;
+  playerList: any;
+  resultPlayers: any;
+  result: any;
 
   constructor(private PlayersService: PlayersService) { }
 
@@ -22,8 +23,20 @@ export class ListPlayersComponent implements OnInit {
     this.PlayersService.getPlayers()
     .subscribe((response) => {
       this.result = response;
-      this.playerList = response[0].rowSet;
+      this.resultPlayers = response[0].rowSet;
+      this.playerList = this.modelConverter(this.result, this.resultPlayers);
     });
   }
 
+  private modelConverter(result, players) {
+    let transformList;
+
+    transformList = _.chain(players)
+                     .map(function(player) {
+                        return _.zipObject(result[0].headers, player);
+                     })
+                    .value();
+
+    return transformList;
+  }
 }

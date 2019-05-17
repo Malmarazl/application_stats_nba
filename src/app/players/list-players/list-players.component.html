@@ -1,6 +1,7 @@
 <div>
   <h3>List Players</h3>
-  <div *ngFor="let player of playerList">
-    <div class="separate">{{ player }}</div>
+  <div class="box" *ngFor="let player of playerList">
+    <b>Player:</b>
+    <div class="separate">Name: {{ player.PLAYER_NAME }} - Age: {{ player.AGE }} - Team:{{ player.TEAM_ABBREVIATION }}</div>
   </div>
 </div>
