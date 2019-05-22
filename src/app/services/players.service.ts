@@ -12,13 +12,16 @@ export class PlayersService {
   constructor(private http: HttpClient) { }
 
   getPlayers(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(`/stats/leaguedashplayerbiostats/?PerMode=Totals&LeagueID=00&Season=2016-17&SeasonType=Regular Season`)
+    return this.http.get<Array<any>>(`${this.API_BASE_URL}/leaguedashplayerbiostats/?PerMode=Totals&LeagueID=00&Season=2016-17&SeasonType=Regular Season`)
     .pipe(
-      map((result: any) => result.resultSets)
+        map((result: any) => result.resultSets)
     );
   }
 
   getPlayer(id: string) { 
-    return this.http.get(`/stats/commonplayerinfo/?PlayerID=${id}`);
+    return this.http.get(`${this.API_BASE_URL}/commonplayerinfo/?PlayerID=${id}`)
+        .pipe(
+            map((result: any) => result)
+        );
   }
 }
