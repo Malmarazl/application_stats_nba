@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
+import { PlayersService } from '../../services/players.service';
+import { PlayerParamsService } from '../../services/player-params.service';
 
 import { ListPlayersComponent } from './list-players.component';
+import { InfoPlayerComponent } from '../info-player/info-player.component';
 
 describe('ListPlayersComponent', () => {
   let component: ListPlayersComponent;
@@ -8,7 +13,16 @@ describe('ListPlayersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListPlayersComponent ]
+      imports: [
+        HttpClientTestingModule
+      ],
+      providers: [
+        PlayersService,
+        PlayerParamsService
+      ],
+      declarations: [
+        ListPlayersComponent,
+        InfoPlayerComponent ]
     })
     .compileComponents();
   }));

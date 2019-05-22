@@ -5,7 +5,7 @@ import { PlayerParamsService } from './player-params.service';
 describe('PlayerParamsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PlayerParamsService]
+      providers: [ PlayerParamsService ]
     });
   });
 
