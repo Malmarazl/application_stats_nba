@@ -6,7 +6,7 @@ export class PlayerParamsService {
 
   constructor() { }
 
-  public modelConverter(responseHeader, responseElements) {
+  public modelConverter(responseHeader: any, responseElements: any) {
     let transformList;
 
     transformList = _.map(responseElements, function(element) {
@@ -15,5 +15,4 @@ export class PlayerParamsService {
 
     return transformList;
   }
-
 }

@@ -1,6 +1,6 @@
 <div class="separate">
       <b>Name:</b> {{ player.PLAYER_NAME }} - <b>Age:</b> {{ player.AGE }} - <b>Team:</b> {{ player.TEAM_ABBREVIATION }}
-      <br/><br/><button (click)="view = !view; getPlayer(player.PLAYER_ID)">View Player</button>
+      <br/><br/><button (click)="view = !view; getPlayer(player.PLAYER_ID)">View Info</button>
       <div class="separate" *ngIf="view && playerInfo">
         <b>Name:</b> {{ playerInfo.FIRST_NAME }}<br/>
         <b>Surname:</b> {{ playerInfo.LAST_NAME }}<br/>

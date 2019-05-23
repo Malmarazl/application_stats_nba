@@ -16,7 +16,7 @@ export class PlayersService {
     .pipe(map((result: any) => result.resultSets));
   }
 
-  getPlayer(id: string) { 
+  getPlayer(id: string) {
     return this.http.get(`${this.API_BASE_URL}/commonplayerinfo/?PlayerID=${id}`)
         .pipe(map((result: any) => result));
   }

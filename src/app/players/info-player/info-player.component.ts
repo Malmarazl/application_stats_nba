@@ -13,12 +13,12 @@ export class InfoPlayerComponent implements OnInit {
 
   playerInfo: any;
   header: any;
-  resultPlayer:any;
+  resultPlayer: any;
+  view: boolean = false;
 
   constructor(private PlayersService: PlayersService, private PlayerParamsService: PlayerParamsService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   public getPlayer(id: string) {
     this.PlayersService.getPlayer(id)

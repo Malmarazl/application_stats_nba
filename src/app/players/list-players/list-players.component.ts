@@ -12,7 +12,6 @@ export class ListPlayersComponent implements OnInit {
   playerList: any;
   resultPlayers: any;
   header: any;
-  view: boolean = false;
 
   constructor(private PlayersService: PlayersService, private PlayerParamsService: PlayerParamsService) { }
 
