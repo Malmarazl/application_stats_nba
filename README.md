@@ -31,7 +31,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Run `npm start` if can't start because there is a problem with CORS -> ng serve --proxy-config proxy.conf.json
 
-##############################################################################################################################################
+###############################################################################################################################################
 
 Develop an SPA in Angular 4 that shows NBA statistics using this api: https://stats.nba.com/stats
 
