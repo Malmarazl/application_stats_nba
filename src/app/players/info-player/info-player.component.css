@@ -1,5 +1,23 @@
 .separate {
     margin-bottom: 3%;
-    margin-right: 10%;
     margin-top: 3%;
 }
+
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid green;
+    padding: 16px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: green;
+    color: white;
+  }

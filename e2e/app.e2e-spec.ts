@@ -7,8 +7,13 @@ describe('stats-nba App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display title Stats NBA', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphTitle()).toEqual('Stats NBA');
+  });
+
+  it('should display title list player', () => {
+    page.navigateTo();
+    expect(page.getParagraphList()).toEqual('List Players');
   });
 });

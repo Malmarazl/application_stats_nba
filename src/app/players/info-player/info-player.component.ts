@@ -9,6 +9,13 @@ import { PlayerParamsService } from '../../services/player-params.service';
 })
 export class InfoPlayerComponent implements OnInit {
 
+  /*
+  * This component is the one that contains the information of the players,
+  * the ones that come as "binding" and the information of the specific player on which you have pressed the button.
+  * In the app you will have the objects of each player with all their properties and put in HTML the parameter you want to use.
+  * or even if in the future you want to try different data you have stored in the object.
+  */
+
   @Input() player: any;
 
   playerInfo: any;

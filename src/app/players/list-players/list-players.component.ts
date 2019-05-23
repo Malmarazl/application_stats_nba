@@ -9,6 +9,11 @@ import { PlayerParamsService } from '../../services/player-params.service';
 })
 export class ListPlayersComponent implements OnInit {
 
+  /*
+  * In this component only take player list and in HTML iterate for generate net component infoPlayer
+  * use PlayerParamService as generic service, where put common function can use in other components
+  */
+
   playerList: any;
   resultPlayers: any;
   header: any;

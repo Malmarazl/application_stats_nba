@@ -1,5 +1,8 @@
 .box {
     width: 30%;
+    height: 250px;
     float: left;
-    text-align: left;
+    text-align: center;
+    border: 1px solid blue;
+    box-sizing: border-box;
 }

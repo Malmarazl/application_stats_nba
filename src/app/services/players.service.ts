@@ -7,17 +7,19 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class PlayersService {
 
-  readonly API_BASE_URL: string = 'https://stats.nba.com/stats';
+  // This service is only for API
+
+  readonly API_BASE_URL: string = 'https://stats.nba.com/stats'; //use if there isn't problem CORS
 
   constructor(private http: HttpClient) { }
 
   getPlayers(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(`${this.API_BASE_URL}/leaguedashplayerbiostats/?PerMode=Totals&LeagueID=00&Season=2016-17&SeasonType=Regular Season`)
+    return this.http.get<Array<any>>(`stats/leaguedashplayerbiostats/?PerMode=Totals&LeagueID=00&Season=2016-17&SeasonType=Regular Season`)
     .pipe(map((result: any) => result.resultSets));
   }
 
   getPlayer(id: string) {
-    return this.http.get(`${this.API_BASE_URL}/commonplayerinfo/?PlayerID=${id}`)
+    return this.http.get(`stats/commonplayerinfo/?PlayerID=${id}`)
         .pipe(map((result: any) => result));
   }
 }
